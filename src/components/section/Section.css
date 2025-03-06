@@ -1,0 +1,64 @@
+/* section form */
+.main-section form.search {
+  padding: 2rem 2rem 1rem;
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+
+.main-section .search_input {
+  width: 200px;
+  padding: 0.3rem 1.5rem 0.3rem 0;
+  border: none;
+  border-bottom: 1px solid #444;
+  font-size: 1rem;
+  outline: none;
+  background-color: transparent;
+}
+
+.main-section .search_btn {
+  background-color: transparent;
+  padding: 0px 2px;
+  border: none;
+  font-size: 1rem;
+  color: #444;
+  position: absolute;
+  right: 2.rem;
+  top: 2.5rem;
+}
+
+/* section sort */
+
+.main-section ul.sort-btns {
+  margin: 3rem 5rem 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-section .sort_btn {
+  margin-left: 0.5rem;
+  color: #aaa;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* section cards */
+.main-section .cards {
+  padding: 0 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4rem 0;
+  padding-bottom: 4rem;
+}
+
+/* section btn-more */
+.btn-more {
+  width: 100px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: block;
+  border-radius: 30px;
+  background-color: #F6F2E8;
+  font-weight: 600;
+}
