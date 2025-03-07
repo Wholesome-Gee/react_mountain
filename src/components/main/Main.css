@@ -1,6 +1,19 @@
+/* header */
+.main-header {
+  width: 100%;
+  height: 500px;
+  background: url('/logo.png') no-repeat center;
+  background-size: contain;
+  background-color: #F6F2E8
+}
+
 /* section form */
+.main-section .inner {
+  padding-top: 2rem;
+}
+
 .main-section form.search {
-  padding: 2rem 2rem 1rem;
+  padding: 2rem;
   display: flex;
   justify-content: end;
   position: relative;
@@ -30,16 +43,21 @@
 /* section sort */
 
 .main-section ul.sort-btns {
-  margin: 3rem 5rem 1.5rem;
+  padding: 3rem 5rem 2rem;
   display: flex;
   justify-content: flex-end;
 }
 
-.main-section .sort_btn {
+.main-section .sort-btns button {
   margin-left: 0.5rem;
   color: #aaa;
   font-size: 0.8rem;
   font-weight: 500;
+  text-align: center;
+}
+
+.main-section .sort-btns .btn-highlight {
+  color: #444;
 }
 
 /* section cards */
@@ -47,9 +65,13 @@
   padding: 0 5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
   gap: 4rem 0;
   padding-bottom: 4rem;
+}
+
+.main-section .cards .no-card_message {
+  margin: 5rem auto;
 }
 
 /* section btn-more */
@@ -57,8 +79,12 @@
   width: 100px;
   margin: 0 auto;
   padding: 1rem;
-  display: block;
   border-radius: 30px;
   background-color: #F6F2E8;
   font-weight: 600;
+}
+
+.btn-more:hover {
+  background-color: #444;
+  color: #F6F2E8;
 }

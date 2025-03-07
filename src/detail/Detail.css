@@ -1,0 +1,17 @@
+.detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.detail_box {
+  width: 600px;
+  height: 500px;
+  background-color: #ddd;
+  border-radius: 5%;
+}

@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import './Card.css'
+import { Link } from 'react-router-dom'
 
-function Card({mountain, setMountain}) {
+function Card({mountain, setMountain,index}) {
   const [산정보, set산정보] = useState([])
   const [numOfRows, setNumOfRows] = useState(20)
   const [hover, setHover] = useState(false)
@@ -15,25 +16,16 @@ function Card({mountain, setMountain}) {
   let 경도 = mountain.lot
   let 위도 = mountain.lat
   let key = import.meta.env.VITE_ALLMOUNT_KEY_
-
-
-  // async function getMountImg(){
-  //   let url = `http://openapi.forest.go.kr/openapi/service/trailInfoService/getforeststoryservice?ServiceKey=${key}&mntnNm=${산이름}`
-  //   let response = await (await axios.get(url)).data.
-  //   console.log(response);
-    
-  //   // set산정보(response.data.response.body.items.item);
-  // }
-
-  // getMountImg()
   
   return (
-    <div className="card">
-      <img className="card_img" src='/no-screenshot.jpg'></img>
-      <p className="card_name">
-        {산이름} <span>({산높이}m)</span>
-      </p>
-      <p className='card_tag'>{산위치}</p>
+    <div className='card_container'>
+      <Link to={`/${산번호}`} className="card">
+        <div className='card_index'>{index+1}</div>
+        <p className="card_name">{산이름}</p>
+        <p className='card_location'>위치 : {산위치}</p>
+        <p className="card_height">해발고도 : {산높이}m</p>
+      </Link>
+      <div className='card-'></div>
     </div>
   )
 }
