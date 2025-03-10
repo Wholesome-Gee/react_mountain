@@ -3,7 +3,7 @@
 - `cd react_music-chart`
 - `code . -r`
 - `npm i`
-
+- `npm i xml2js`
 ## 라이브러리
 - axios `npm i axios`
 - react-router-dom `npm i react-router-dom`

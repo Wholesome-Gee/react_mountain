@@ -19,13 +19,12 @@ function Card({mountain, setMountain,index}) {
   
   return (
     <div className='card_container'>
-      <Link to={`/${산번호}`} className="card">
+      <Link to={`/${산번호}`} state={{산이름,산높이}} className="card">
         <div className='card_index'>{index+1}</div>
         <p className="card_name">{산이름}</p>
         <p className='card_location'>위치 : {산위치}</p>
         <p className="card_height">해발고도 : {산높이}m</p>
       </Link>
-      <div className='card-'></div>
     </div>
   )
 }
