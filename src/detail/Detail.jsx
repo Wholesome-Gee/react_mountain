@@ -17,20 +17,22 @@ function Detail() {
 
   async function getMountInformation() {
     let response = (await axios.get(`http://openapi.forest.go.kr/openapi/service/trailInfoService/getforeststoryservice?ServiceKey=${key}&mntnNm=${산이름}`)).data.response.body.items.item;
+    console.log(response);
+    
 
     if(Array.isArray(response)){
       response.map((item)=>{
         item.mntnsbttlinfo.trim() !== '' && item.mntnsbttlinfo !== "&amp;nbsp;" && set산특징(item.mntnsbttlinfo)
         item.mntninfopoflc.trim() !== '' && item.mntninfopoflc !== "&amp;nbsp;" && set산소재지(item.mntninfopoflc)
         item.mntnattchimageseq.trim() !== '' && item.mntnattchimageseq !== "&amp;nbsp;" && set산사진(item.mntnattchimageseq)
-        item.hndfmsmtnslctnrson.trim() !== '' && item.hndfmsmtnslctnrson !== "&amp;nbsp;" && set명산선정이유(item.hndfmsmtnslctnrson)
-      })
-      console.log(5,산특징,산소재지,명산선정이유);
+        item.hndfmsmtnslctnrson.trim() !== '' && !(item.hndfmsmtnslctnrson.includes('nbsp')) && set명산선정이유(item.hndfmsmtnslctnrson)
+      // console.log(5,산특징,산소재지,명산선정이유);
+    })
     } else {
       response.mntnsbttlinfo.trim() !== '' && response.mntnsbttlinfo !== "&amp;nbsp;" && set산특징(response.mntnsbttlinfo)
-        response.mntninfopoflc.trim() !== '' && response.mntninfopoflc !== "&amp;nbsp;" && set산소재지(response.mntninfopoflc)
-        response.mntnattchimageseq.trim() !== '' && response.mntnattchimageseq !== "&amp;nbsp;" && set산사진(response.mntnattchimageseq)
-        response.hndfmsmtnslctnrson.trim() !== '' && response.hndfmsmtnslctnrson !== "&amp;nbsp;" && set명산선정이유(response.hndfmsmtnslctnrson)
+      response.mntninfopoflc.trim() !== '' && response.mntninfopoflc !== "&amp;nbsp;" && set산소재지(response.mntninfopoflc)
+      response.mntnattchimageseq.trim() !== '' && response.mntnattchimageseq !== "&amp;nbsp;" && set산사진(response.mntnattchimageseq)
+      response.hndfmsmtnslctnrson.trim() !== '' && !(response.hndfmsmtnslctnrson.includes('nbsp')) && set명산선정이유(response.hndfmsmtnslctnrson)
     }
   }
   

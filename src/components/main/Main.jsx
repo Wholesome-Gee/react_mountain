@@ -47,20 +47,24 @@ function Section({count, setCount, mountains, allMountains, setAllMountains, set
             <input className='search_input' type="text" placeholder='산이름을 입력하세요.' value={value} onChange={handleChangeValue}/>
             <button className='search_btn'><FaSearch className='search_btn_icon' /></button>
           </form>
-          <ul className="sort-btns">
-            <button 
-              className={`sort_btn-name ${sort==='name'&&'btn-highlight'}`}
-              onClick={이름순정렬}
-            >
-              이름순
-            </button>
-            <button 
-              className={`sort_btn-height ${sort==='height'&&'btn-highlight'}`}
-              onClick={높이순정렬}
-            >
-              높이순
-            </button>
-          </ul>
+          {
+            value ? 
+              null :
+              <ul className="sort-btns">
+                <button 
+                  className={`sort_btn-name ${sort==='name'&&'btn-highlight'}`}
+                  onClick={이름순정렬}
+                >
+                  이름순
+                </button>
+                <button 
+                  className={`sort_btn-height ${sort==='height'&&'btn-highlight'}`}
+                  onClick={높이순정렬}
+                >
+                  높이순
+                </button>
+              </ul>
+          }
           <div className="cards">
             {
               noResult ? <div className='no-card_message'>검색 결과가 없습니다.</div> :
@@ -70,7 +74,7 @@ function Section({count, setCount, mountains, allMountains, setAllMountains, set
           {
             noResult ? 
               null : 
-              !value && <button className="btn-more" onClick={handleMoreBtnClick}>더 보기</button>
+              count===4 ? null : !value && <button className="btn-more" onClick={handleMoreBtnClick}>더 보기</button>
           }
           
         </div>
