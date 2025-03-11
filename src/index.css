@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import './App.css';
+@import './components/card/Card.css';
+@import './components/detail/Detail.css';
+@import './components/footer/Footer.css';
+@import './components/login/Login.css';
+@import './components/nav/Nav.css';
+@import './components/section/Section.css';
 
 body {
   margin: 0

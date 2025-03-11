@@ -1,5 +1,4 @@
 import axios from 'axios'
-import './App.css'
 import { useEffect, useState } from 'react'
 import Nav from './components/nav/Nav'
 import Section from './components/section/Section'

@@ -3,7 +3,7 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './components/login/Login.jsx'
-import Detail from './detail/Detail.jsx'
+import Detail from './components/detail/Detail.jsx'
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
