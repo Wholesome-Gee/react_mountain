@@ -2,7 +2,7 @@ import axios from 'axios'
 import './App.css'
 import { useEffect, useState } from 'react'
 import Nav from './components/nav/Nav'
-import Main from './components/main/Main'
+import Section from './components/section/Section'
 import Footer from './components/footer/Footer'
 import { Outlet } from 'react-router-dom'
 
@@ -58,7 +58,7 @@ function App() {
   return(
     <div>
       <Nav/>
-      <Main 
+      <Section 
         count={count} 
         setCount={setCount}
         mountains={mountains}

@@ -1,6 +1,6 @@
 import { FaSearch } from 'react-icons/fa'
 import Card from '../card/Card'
-import './Main.css'
+import './Section.css'
 import { useState } from 'react'
 
 function Section({count, setCount, mountains, allMountains, setAllMountains, setMountains, sort, numOfRows, 이름순정렬, 높이순정렬}) {
