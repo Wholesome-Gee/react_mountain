@@ -32,25 +32,14 @@ function App() {
   
 
   let getAllMountains = async () => {
-    try {
-        const response = await axios.get(`${url.baseUrl}/${url.subUrl}?serviceKey=${url.serviceKey}&type=${url.type}&numOfRows=100`);
-        
-        console.log("API Response:", response.data); // 응답 출력
-
-        // 응답 구조가 예상한 대로 체크
-        const items = response.data.response?.body?.items?.item;
-        if (!items) {
-            throw new Error("API response structure is invalid");
-        }
-
-        let sortedAllMountains = sort === 'height' ? [...items].sort((a, b) => -(a.aslAltide - b.aslAltide)) : [...items];
-        setAllMountains(sortedAllMountains);
-        let mountains = sortedAllMountains.slice(0, url.numOfRows);
-        setMountains(mountains);
-    } catch (error) {
-        console.error("API 요청 오류:", error); // 오류 로그 출력
-    }
-};
+    let response = (await axios.get(`${url.baseUrl}/${url.subUrl}?serviceKey=${url.serviceKey}&type=${url.type}&numOfRows=100`)).data.response.body.items.item
+    // console.log(2,response);
+    // console.log(3);
+    let sortedAllMountains = sort === 'height' ? [...response].sort((a,b)=>-(a.aslAltide - b.aslAltide)) : [...response]
+    setAllMountains(sortedAllMountains)
+    let mountains = sortedAllMountains.slice(0,url.numOfRows)
+    setMountains(mountains)
+  }
 
   function 이름순정렬() {
     let sortedMountains = [...allMountains].sort((a,b)=> {
