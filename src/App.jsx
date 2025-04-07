@@ -12,7 +12,7 @@ function App() {
   const [sort, setSort] = useState('name')
   // const [numOfRows, setNumOfRows] = useState(6)
   let url = {
-    baseUrl : 'http://apis.data.go.kr/B553662/top100FamtListBasiInfoService',
+    baseUrl : 'https://apis.data.go.kr/B553662/top100FamtListBasiInfoService',
     subUrl : 'getTop100FamtListBasiInfoList',
     serviceKey : import.meta.env.VITE_HUNDREDMOUNT_KEY_,
     type : 'json',
