@@ -14,7 +14,7 @@ function App() {
   let url = {
     baseUrl : 'https://apis.data.go.kr/B553662/top100FamtListBasiInfoService',
     subUrl : 'getTop100FamtListBasiInfoList',
-    serviceKey : import.meta.env.VITE_HUNDREDMOUNT_KEY_,
+    serviceKey : import.meta.env.VITE_SECRET_KEY_,
     type : 'json',
     numOfRows : 20 * count, // 한번에 보여줄 산 개수
     pageNo : 1, 

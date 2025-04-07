@@ -8,14 +8,14 @@ function Detail() {
   const [산소재지, set산소재지] = useState('')
   const [산사진, set산사진] = useState('')
   const [명산선정이유, set명산선정이유] = useState('')
-  let key = import.meta.env.VITE_ALLMOUNT_KEY_
+  let key = import.meta.env.VITE_SECRET_KEY_
   
   useEffect(()=>{
     getMountInformation()
   },[])
 
   async function getMountInformation() {
-    let response = (await axios.get(`http://openapi.forest.go.kr/openapi/service/trailInfoService/getforeststoryservice?ServiceKey=${key}&mntnNm=${산이름}`)).data.response.body.items.item;
+    let response = (await axios.get(`https://openapi.forest.go.kr/openapi/service/trailInfoService/getforeststoryservice?ServiceKey=${key}&mntnNm=${산이름}`)).data.response.body.items.item;
     console.log(response);
     
 
