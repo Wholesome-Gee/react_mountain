@@ -15,7 +15,7 @@ function Detail() {
   },[])
 
   async function getMountInformation() {
-    let response = (await axios.get(`http://openapi.forest.go.kr/openapi/service/trailInfoService/getforeststoryservice?ServiceKey=${key}&mntnNm=${산이름}`)).data.response.body.items.item;
+    let response = (await axios.get(`https://openapi.forest.go.kr/openapi/service/trailInfoService/getforeststoryservice?ServiceKey=${key}&mntnNm=${산이름}`)).data.response.body.items.item;
     console.log(response);
     
 
