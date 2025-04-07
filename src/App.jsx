@@ -33,7 +33,6 @@ function App() {
 
   let getAllMountains = async () => {
     let response = (await axios.get(`${url.baseUrl}/${url.subUrl}?serviceKey=${url.serviceKey}&type=${url.type}&numOfRows=100`)).data.response.body.items.item
-    // console.log(2,response);
     // console.log(3);
     let sortedAllMountains = sort === 'height' ? [...response].sort((a,b)=>-(a.aslAltide - b.aslAltide)) : [...response]
     setAllMountains(sortedAllMountains)
